@@ -9,9 +9,9 @@ import placesReducer from './store/places-reducer';
 import { init } from './helpers/db';
 
 init().then(() => {
-  console.log('Initialized database');
+  //console.log('Initialized database');
 }).catch(err => {
-  console.log('Initializing db failed')
+  //console.log('Initializing db failed')
 });
 
 const rootReducer = combineReducers({
