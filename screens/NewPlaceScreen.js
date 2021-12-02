@@ -10,13 +10,19 @@ const NewPlaceScreen = props => {
     const dispacth = useDispatch();
 
     const [titleValue, setTitleValue] = useState('');
+    const [selectedImage, setSelectedImage] = useState('');
+
 
     const titleChangeHandler = text => {
         setTitleValue(text);
     }
 
+    const imageTakenHandler = imagePath => {
+        setSelectedImage(imagePath);
+    }
+
     const savePlaceHandler = () => {
-        dispacth(placesActions.addPlace(titleValue));
+        dispacth(placesActions.addPlace(titleValue, selectedImage));
         props.navigation.goBack();
     }
     return (
@@ -28,7 +34,7 @@ const NewPlaceScreen = props => {
                     onChangeText={titleChangeHandler}
                     value={titleValue}
                 />
-                <ImagePicker />
+                <ImagePicker onImageTaken={imageTakenHandler} />
                 <Button
                     title="Save Place"
                     color={Colors.primary}

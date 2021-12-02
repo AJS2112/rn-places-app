@@ -30,6 +30,7 @@ const ImgPicker = props => {
         });
 
         setPickedImage(image.uri);
+        props.onImageTaken(image.uri);
     };
 
     return (
@@ -44,19 +45,20 @@ const ImgPicker = props => {
                     />
                 )
                 }
-                <Button
-                    title="Take Image"
-                    color={Colors.primary}
-                    onPress={takeImageHandler}
-                />
             </View>
+            <Button
+                title="Take Image"
+                color={Colors.primary}
+                onPress={takeImageHandler}
+            />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     imagePicker: {
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 15
     },
     imagePreview: {
         width: '100%',
