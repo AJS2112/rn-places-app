@@ -30,7 +30,8 @@
     "redux-thunk": "^2.4.1",
     "expo-image-picker": "~11.0.3",
     "expo-permissions": "~13.0.3",
-    "expo-file-system": "~13.0.3"
+    "expo-file-system": "~13.0.3",
+    "expo-sqlite": "~10.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
